@@ -1,5 +1,5 @@
 <?php
-require_once('classes/Pessoa.php');
+require_once("classes/ClassePessoa.php");
 
 // criar um novo objeto
 $pessoa = new Pessoa();
