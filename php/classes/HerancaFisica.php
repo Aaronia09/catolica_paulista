@@ -1,7 +1,7 @@
 <?php
-require_once("ClassePessoaH.php");
+require_once("HerancaPessoa.php");
 
-class Fisica extends Pessoa
+final class Fisica extends Pessoa
 {
     private $nome, $cpf;
 
@@ -12,7 +12,8 @@ class Fisica extends Pessoa
         $this->setCPF($cpf);
     }
 
-    function setNome($nome): bool
+    // método acessor
+    private function setNome($nome): bool
     {
         if (is_string($nome)) {
             $this->nome = $nome;
@@ -22,7 +23,8 @@ class Fisica extends Pessoa
         }
     }
 
-    function setCPF($cpf): bool
+    // método acessor
+    private function setCPF($cpf): bool
     {
         if (is_string($cpf)) {
             $this->cpf = $cpf;
@@ -31,6 +33,16 @@ class Fisica extends Pessoa
             return false;
         }
     }
-}
 
+    public function exibirDados(){
+        $dados=array(
+            "nome"=>$this->nome,
+            "cpf"=>$this->cpf,
+            "endereco"=>$this->endereco,
+            "email"=>$this->email,
+            "dataCadastro"=>$this->dataCadastro
+        );
+        return json_encode($dados);
+    }
+}
 ?>

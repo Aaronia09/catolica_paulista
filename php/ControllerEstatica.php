@@ -1,5 +1,5 @@
 <?php
-include("classes/ClasseEstatica.php");
+include("classes/Estatica.php");
 
 echo "</br>Voltagem: " . ExemploEstatica::$voltagem;
 

@@ -1,5 +1,5 @@
 <?php
-require_once("classes/ClassePessoa.php");
+require_once("classes/Pessoa.php");
 
 // atribuindo valores na variaveis
 $nome = "Danilo Borges";

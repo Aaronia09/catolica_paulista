@@ -1,18 +1,18 @@
 <?php
-require_once("ClassePessoaH.php");
+require_once("HerancaPessoa.php");
 
-class Juridica extends Pessoa
+final class Juridica extends Pessoa
 {
     private $razaoSocial, $cnpj;
 
     function __construct($razaoSocial, $cnpj, $endereco, $email, $dataCadastro)
     {
         parent::__construct($endereco, $email, $dataCadastro);
-        $this->setNome($razaoSocial);
+        $this->setrazaoSocial($razaoSocial);
         $this->setCPF($cnpj);
     }
 
-    function setNome($razaoSocial): bool
+    private function setrazaoSocial($razaoSocial): bool
     {
         if (is_string($razaoSocial)) {
             $this->razaoSocial = $razaoSocial;
@@ -22,7 +22,7 @@ class Juridica extends Pessoa
         }
     }
 
-    function setCPF($cnpj): bool
+    private function setCPF($cnpj): bool
     {
         if (is_string($cnpj)) {
             $this->cnpj = $cnpj;
@@ -31,6 +31,16 @@ class Juridica extends Pessoa
             return false;
         }
     }
-}
 
+    public function exibirDados(){
+        $dados=array(
+            "razaoSocial"=>$this->razaoSocial,
+            "cnpj"=>$this->cnpj,
+            "endereco"=>$this->endereco,
+            "email"=>$this->email,
+            "dataCadastro"=>$this->dataCadastro
+        );
+        return json_encode($dados);
+    }
+}
 ?>

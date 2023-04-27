@@ -1,15 +1,20 @@
 <?php
-class Pessoa
+// classe
+abstract class Pessoa
 {
+    // elementos
     protected $endereco, $email, $dataCadastro;
 
+    // contrutor  
     function __construct($endereco, $email, $dataCadastro)
     {
-        $this->setEndereco->$endereco;
-        $this->setEmail->$email;
-        $this->setDataCadastro->$dataCadastro;
+        //atribuição dos elementos com métodos acessores
+        $this->setEndereco($endereco);
+        $this->setEmail($email);
+        $this->setDataCadastro($dataCadastro);
     }
 
+    // método acessor
     private function setEndereco($endereco): bool
     {
         if (is_string($endereco)) {
@@ -20,6 +25,7 @@ class Pessoa
         }
     }
 
+    // método acessor
     private function setEmail($email): bool
     {
         if (is_string($email)) {
@@ -30,6 +36,7 @@ class Pessoa
         }
     }
 
+    // método acessor
     private function setDataCadastro($dataCadastro): bool
     {
         if (is_string($dataCadastro)) {
@@ -39,5 +46,7 @@ class Pessoa
             return false;
         }
     }
+
+    abstract public function exibirDados();
 }
 ?>

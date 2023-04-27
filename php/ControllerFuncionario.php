@@ -1,5 +1,5 @@
 <?php
-require_once("classes/ClasseFuncionario.php");
+require_once("classes/Funcionario.php");
 
 $pessoa = new Funcionario();
 $pessoa->setNome("Danilo Borges");
